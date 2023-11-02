@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("pics/Sorting\ hat.jpeg"); /* Bakgrundsbild istället för färg */
+  background-size: cover; /* Använder detta för att säkerställa att bilden täcker hela bakgrunden */
+  background-repeat: no-repeat; /* Förhindra att bilden upprepas */
+  background-attachment: fixed;
+  background-position: center; /* Här gör jag att bakgrundsbilden blir i mitten oavsett strl */
+}
+
+.container {
+  width: 800px;
+  max-width: 80%; /* Tar 80% av skärmen */
+  background-color: white; /* Färg inuti container */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Stylar mina knappar */
+.btn-1,
+.btn-2,
+.btn-3,
+.btn-4 {
+  background-color: goldenrod;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: black;
+  outline: none;
+}
+
+.btn-1:hover,
+.btn-2:hover,
+.btn-3:hover,
+.btn-4:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
+.col1 {
+  color: goldenrod;
+}
+
+.col2 {
+  color: white;
+}
+
+.place {
+  display: inline-block;
+}
+
+.col3 {
+  color: black;
+}
+
+.font {
+  font-family: Garamond;
+}
