@@ -30,10 +30,10 @@ function renderScene() {
   btn2.classList.add("col3", "btn-1");
 
   //   btn3.textContent = scene.button3.text;
-  //   btn3.classList.add("col3", "btn-1");
+  //   btn3.classList.add("col3", "btn-3");
 
   //   btn4.textContent = scene.button4.text;
-  //   btn4.classList.add("col3", "btn-1");
+  //   btn4.classList.add("col3", "btn-4");
 
   // Nedan, så vill hamna på en ny scen med onClick, vi ska inte anropa utan systemet ska därav inga ()
   // Nedan, Kallas anonym function
