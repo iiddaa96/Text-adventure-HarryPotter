@@ -2,7 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Garamond, Times, serif;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-image: url("pics/Sorting\ hat.jpeg"); /* Bakgrundsbild istället för färg */
+  /*background-image: url("pics/Sorting\ hat.jpeg"); /* Bakgrundsbild istället för färg */
   background-size: cover; /* Använder detta för att säkerställa att bilden täcker hela bakgrunden */
   background-repeat: no-repeat; /* Förhindra att bilden upprepas */
   background-attachment: fixed;
@@ -27,6 +27,8 @@ body {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px 2px;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn-grid {
@@ -75,4 +77,9 @@ body {
 
 .font {
   font-family: Garamond;
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
 }
