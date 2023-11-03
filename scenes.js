@@ -92,7 +92,7 @@ const scenes = [
     },
   }, // scen endGame - 7
   {
-    background: 'url("pics/celebration")',
+    background: 'url("pics/celebration.jpg")',
     text: "Tack så mycket för att du räddade mitt liv, jag är evigt tacksam!",
     button1: {
       text: "Start",

@@ -8,8 +8,8 @@ function renderScene() {
   const text = document.getElementById("text");
   const btn1 = document.getElementById("btn-1");
   const btn2 = document.getElementById("btn-2");
-  const btn3 = document.getElementById("btn-3");
-  const btn4 = document.getElementById("btn-4");
+  //   const btn3 = document.getElementById("btn-3");
+  //   const btn4 = document.getElementById("btn-4");
 
   const scene = scenes[activeSceneIndex]; // Nu visas scene 1 på webbläsaren, sätts ihop med scenes.js scenes
   text.textContent = scene.text;
@@ -27,7 +27,7 @@ function renderScene() {
   btn1.classList.add("col3", "btn-1");
 
   btn2.textContent = scene.button2.text;
-  btn2.classList.add("col3", "btn-1");
+  btn2.classList.add("col3", "btn-2");
 
   //   btn3.textContent = scene.button3.text;
   //   btn3.classList.add("col3", "btn-3");
