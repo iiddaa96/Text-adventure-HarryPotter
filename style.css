@@ -13,7 +13,6 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  /*background-image: url("pics/Sorting\ hat.jpeg"); /* Bakgrundsbild istället för färg */
   background-size: cover; /* Använder detta för att säkerställa att bilden täcker hela bakgrunden */
   background-repeat: no-repeat; /* Förhindra att bilden upprepas */
   background-attachment: fixed;
@@ -95,4 +94,19 @@ h1 {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+#inventory {
+  color: black;
+  position: relative;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: 85%;
+  transform: translateX(-50%);
+}
+
+h3 {
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px goldenrod;
 }

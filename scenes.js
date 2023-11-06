@@ -78,6 +78,10 @@ const scenes = [
       text: "Gå tillbaka",
       activeSceneIndex: 0,
     },
+    button2: {
+      text: "Error",
+      activeSceneIndex: 0,
+    },
   }, // Fail page 2 - 6
   {
     background: 'url("pics/roon.jpg")',
@@ -95,11 +99,11 @@ const scenes = [
     background: 'url("pics/celebration.jpg")',
     text: "Tack så mycket för att du räddade mitt liv, jag är evigt tacksam!",
     button1: {
-      text: "Start",
+      text: "Till start",
       activeSceneIndex: 0,
     },
     button2: {
-      text: "Gå tillbak",
+      text: "Gå tillbaka",
       activeSceneIndex: 4,
     },
   },
