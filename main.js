@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", main);
 function main() {
   renderScene(); //Visar scen 1
 }
+//Global tom array
 const playerInventory = [];
 
 function renderScene() {
@@ -66,11 +67,11 @@ function renderScene() {
   };
   // Tredje knappen om man klickar på den
   btn3.onclick = function () {
-    useItem(2); // Skicka index 2 för att använda det tredje redskapet
+    useItem(2); //
   };
   // Fjärde knappen om man klickar på den
   btn4.onclick = function () {
-    useItem(3); // Skicka index 3 för att använda det fjärde redskapet
+    useItem(3);
   };
 }
 
