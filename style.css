@@ -38,10 +38,7 @@ body {
 }
 
 /* Stylar mina knappar */
-.btn-1,
-.btn-2,
-.btn-3,
-.btn-4 {
+.btn {
   background-color: goldenrod;
   border: 1px solid black;
   border-radius: 5px;
@@ -50,10 +47,7 @@ body {
   outline: none;
 }
 
-.btn-1:hover,
-.btn-2:hover,
-.btn-3:hover,
-.btn-4:hover {
+.btn:hover {
   background-color: darkred;
   cursor: pointer;
 }
