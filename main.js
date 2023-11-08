@@ -7,6 +7,7 @@ function main() {
 function renderScene() {
   const text = document.getElementById("text");
   const actionButtons = document.getElementById("action-buttons");
+  const thingList = document.getElementById("thing-list");
 
   const scene = scenes[activeSceneIndex]; // Nu visas scene 1 på webbläsaren, sätts ihop med scenes.js scenes
   // Lite musik genom scenerna
@@ -19,21 +20,24 @@ function renderScene() {
   document.body.style.backgroundImage = scene.background;
   text.textContent = scene.text;
 
+  // Loop för actions (knappar)
+  // Tömmer diven så nya knapparna kan komma fram
   actionButtons.innerHTML = "";
+  // for loop, "för en knapp av scen knapparna" skapar knapp button.
   for (const action of scene.actions) {
     const btn = document.createElement("button");
+    // action.text är för att skriva ut texten för de knappar som finns i arrayen
     btn.textContent = action.text;
     btn.className = "btn";
     // Nedan, så vill hamna på en ny scen med onClick, vi ska inte anropa utan systemet ska därav inga ()
-    // Nedan, Kallas anonym function
-    // Första knappen
     btn.onclick = function () {
       goToNextScene(action.activeSceneIndex);
     };
     actionButtons.append(btn);
   }
 
-  if (scene.things) {
+  // for loop för things, item listan
+  for (const thing of scene.things) {
     // Visa bilder på sidan (for loop)
   }
 }

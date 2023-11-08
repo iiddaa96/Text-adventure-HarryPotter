@@ -33,18 +33,18 @@
 //   }
 
 //Global tom array
-const playerInventory = [];
+// const playerInventory = [];
 
-function addToInventory(item) {
-  playerInventory.push(item);
-  updateInventory();
-}
+// function addToInventory(item) {
+//   playerInventory.push(item);
+//   updateInventory();
+// }
 
-// Funktion för att ta bort ett redskap från inventory
-function removeFromInventory(item) {
-  const index = playerInventory.indexOf(item);
-  if (index > -1) {
-    playerInventory.splice(index, 1);
-    updateInventory(); // Uppdatera inventory-gränssnittet
-  }
+// // Funktion för att ta bort ett redskap från inventory
+// function removeFromInventory(item) {
+//   const index = playerInventory.indexOf(item);
+//   if (index > -1) {
+//     playerInventory.splice(index, 1);
+//     updateInventory(); // Uppdatera inventory-gränssnittet
+//   }
 }
