@@ -47,4 +47,3 @@
 //     playerInventory.splice(index, 1);
 //     updateInventory(); // Uppdatera inventory-gränssnittet
 //   }
-}

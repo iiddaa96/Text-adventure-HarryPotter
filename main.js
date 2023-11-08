@@ -10,7 +10,7 @@ function renderScene() {
   const thingList = document.getElementById("thing-list");
 
   const scene = scenes[activeSceneIndex]; // Nu visas scene 1 på webbläsaren, sätts ihop med scenes.js scenes
-  // Lite musik genom scenerna
+  // Lite musik genom scenerna, startar från scen 1
   if (scene.startBackgroundMusic) {
     const backgroundMusic = new Audio("music/harryPotter.mp3");
     backgroundMusic.volume = 0.5;
