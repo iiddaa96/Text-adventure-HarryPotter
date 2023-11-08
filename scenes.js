@@ -19,6 +19,28 @@ const scenes = [
   {
     background: 'url("pics/hagrids-house.png")',
     text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Behöver du något som kan hjälpa honom? Såg att det fanns en trollstav här någon stans. Om du ser trollstaven tar den med dig.",
+    things: [
+      {
+        name: "Trollstav",
+        url: 'url("pics/trollstav.jpg")',
+      },
+      {
+        name: "Trollkarls hatt",
+        url: 'url("pics/hatt.jpg")',
+      },
+      {
+        name: "Pumpa",
+        url: 'url("pics/pumpajpg")',
+      },
+      {
+        name: "Sten",
+        url: 'url("pics/sten.jpg")',
+      },
+      {
+        name: "Fjäder",
+        url: 'url("pics/fjäder.jpg")',
+      },
+    ],
     button1: {
       text: "Gå till kartan",
       activeSceneIndex: 2,
@@ -99,7 +121,7 @@ const scenes = [
     background: 'url("pics/celebration.jpg")',
     text: "Tack så mycket för att du räddade mitt liv, jag är evigt tacksam!",
     button1: {
-      text: "Till start",
+      text: "Tillbaka",
       activeSceneIndex: 0,
     },
     button2: {

@@ -32,15 +32,8 @@
 //     break;
 //   }
 
-function useItem(itemIndex) {
-  const itemList = ["Pumpa", "Trollstav", "Fjäder", "Sten", "Bläck"];
-  const showList = document.getElementById("showList");
-  const item = itemList[itemIndex];
-
-  addToInventory(item);
-  alert("Du har nu plockat med dig " + item);
-  showList.innerText = item;
-}
+//Global tom array
+const playerInventory = [];
 
 function addToInventory(item) {
   playerInventory.push(item);

@@ -3,22 +3,24 @@ window.addEventListener("DOMContentLoaded", main);
 function main() {
   renderScene(); //Visar scen 1
 }
-//Global tom array
-const playerInventory = [];
-
 function renderScene() {
   const text = document.getElementById("text");
   const btn1 = document.getElementById("btn-1");
   const btn2 = document.getElementById("btn-2");
   const btn3 = document.getElementById("btn-3");
   const btn4 = document.getElementById("btn-4");
+  const backgroundMusic = new Audio("music/fantasy.mp3");
+
+  backgroundMusic.volume = 0.5;
+  backgroundMusic.loop = true;
+  backgroundMusic.play();
 
   const scene = scenes[activeSceneIndex]; // Nu visas scene 1 på webbläsaren, sätts ihop med scenes.js scenes
   text.textContent = scene.text;
   btn1.textContent = scene.button1.text;
   btn2.textContent = scene.button2.text;
   // CSS för bodyn
-  document.body.style.background = scene.background;
+  document.body.style.backgroundImage = scene.background;
 
   //CSS för h2
   text.textContent = scene.text;
@@ -55,6 +57,22 @@ function renderScene() {
     btn2.style.display = "block";
   }
 
+  if (scene.things) {
+    btn3.onclick = function () {
+      const inventoryList = document.getElementById("inventory-list");
+
+      scene.things.forEach((item) => {
+        const itemElement = document.createElement("ul");
+        itemElement.style.backgroundImage = item.url;
+        itemElement.className = "inventory-item";
+      });
+    };
+    btn4.onclick = function () {
+      inventoryList.appendChild(itemElement);
+    };
+  } else {
+  }
+
   // Nedan, så vill hamna på en ny scen med onClick, vi ska inte anropa utan systemet ska därav inga ()
   // Nedan, Kallas anonym function
   // Första knappen
@@ -64,14 +82,6 @@ function renderScene() {
   //Andra knappen om man klickar på den
   btn2.onclick = function () {
     goToNextScene(scene.button2.activeSceneIndex);
-  };
-  // Tredje knappen om man klickar på den
-  btn3.onclick = function () {
-    useItem(2); //
-  };
-  // Fjärde knappen om man klickar på den
-  btn4.onclick = function () {
-    useItem(3);
   };
 }
 
