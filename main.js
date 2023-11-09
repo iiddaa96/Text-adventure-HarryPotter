@@ -8,6 +8,7 @@ function renderScene() {
   const text = document.getElementById("text");
   const actionButtons = document.getElementById("action-buttons");
   const thingList = document.getElementById("thing-list");
+  const backpack = document.getElementById("backpack-items");
 
   const scene = scenes[activeSceneIndex]; // Nu visas scene 1 på webbläsaren, sätts ihop med scenes.js scenes
   // Lite musik genom scenerna, startar från scen 1
@@ -36,14 +37,27 @@ function renderScene() {
     actionButtons.append(btn);
   }
 
-  // For loop för att få ut mina bilder
-  thingList.innerHTML = ""; // Tömmer thingList för att lägga till nya bilder
   for (const thing of scene.things) {
     const img = document.createElement("img");
     img.src = thing.url;
     img.alt = thing.name;
-    img.className = "thing-image thing-list"; // Style från css:en till mina bilder
+    img.className = "thing-image";
+
+    // Lägg till klickhändelse för varje bild
+    img.addEventListener("click", function () {
+      addToBackpack(thing);
+    });
+
     thingList.appendChild(img);
+  }
+
+  function addToBackpack(thing) {
+    const backpackImg = document.createElement("img");
+    backpackImg.src = thing.url;
+    backpackImg.alt = thing.name;
+    backpackImg.className = "backpack-image";
+
+    backpack.appendChild(backpackImg);
   }
 }
 
