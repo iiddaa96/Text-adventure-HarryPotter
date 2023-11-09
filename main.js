@@ -37,18 +37,25 @@ function renderScene() {
     actionButtons.append(btn);
   }
 
-  for (const thing of scene.things) {
-    const img = document.createElement("img");
-    img.src = thing.url;
-    img.alt = thing.name;
-    img.className = "thing-image";
+  // Med hjälp av if sats gör jag så att listan med bilder bara finns med i scen 1, hagrids hus.
+  // Med denna for loopen så skapar jag img, där jag kopplar src och alt med thing som ligger i scene
+  if (activeSceneIndex === 1) {
+    for (const thing of scene.things) {
+      const img = document.createElement("img");
+      img.src = thing.url;
+      img.alt = thing.name;
+      img.className = "thing-image";
 
-    // Lägg till klickhändelse för varje bild
-    img.addEventListener("click", function () {
-      addToBackpack(thing);
-    });
+      // Här läggs en klickhändelse till varje bild som ligger i thing
+      img.addEventListener("click", function () {
+        addToBackpack(thing);
+      });
 
-    thingList.appendChild(img);
+      thingList.appendChild(img); // Lägger till bilderna i diven
+    }
+  } else {
+    // Om bilderna inte ligger i scen 1 så töms diven
+    thingList.innerHTML = "";
   }
 
   function addToBackpack(thing) {
