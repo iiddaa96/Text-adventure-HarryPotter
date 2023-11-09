@@ -36,10 +36,20 @@ function renderScene() {
     actionButtons.append(btn);
   }
 
-  // for loop för things, item listan
+  // For loop för att få ut mina bilder
+  thingList.innerHTML = ""; // Tömmer thingList för att lägga till nya bilder
   for (const thing of scene.things) {
-    // Visa bilder på sidan (for loop)
+    const img = document.createElement("img");
+    img.src = thing.url;
+    img.alt = thing.name;
+    img.className = "thing-image thing-list";
+    thingList.appendChild(img);
   }
+
+  // for loop för things, item listan
+  // for (const thing of scene.things) {
+  //   // Visa bilder på sidan (for loop)
+  // }
 }
 
 // Function till goToNextScen

@@ -25,11 +25,11 @@ const scenes = [
     things: [
       {
         name: "Trollstav",
-        url: 'url("pics/trollstav.jpg")',
+        url: "pics/trollstav.jpg",
       },
       {
-        name: "Trollkarls hatt",
-        url: 'url("pics/hatt.jpg")',
+        name: "Hatt",
+        url: "pics/hatt.jpg",
       },
       {
         name: "Pumpa",
@@ -37,11 +37,11 @@ const scenes = [
       },
       {
         name: "Sten",
-        url: 'url("pics/sten.jpg")',
+        url: "pics/sten.jpg",
       },
       {
         name: "Fjäder",
-        url: 'url("pics/fjäder.jpg")',
+        url: "pics/fjäder.jpg",
       },
     ],
     actions: [
