@@ -21,7 +21,7 @@ const scenes = [
   {
     startBackgroundMusic: true,
     background: 'url("pics/hagrids-house.png")',
-    text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Behöver du något som kan hjälpa honom? Såg att det fanns en trollstav här någon stans. Om du ser trollstaven tar den med dig.",
+    text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Du behöver plocka med dig en trollstav och en hatt. Tyckte jag såg att det fanns en trollstav här någon stans, hmm..",
     things: [
       {
         name: "Trollstav",

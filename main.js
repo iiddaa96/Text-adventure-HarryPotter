@@ -13,7 +13,7 @@ function renderScene() {
   const scene = scenes[activeSceneIndex]; // Nu visas scene 1 på webbläsaren, sätts ihop med scenes.js scenes
   // Lite musik genom scenerna, startar från scen 1
   if (scene.startBackgroundMusic) {
-    const backgroundMusic = new Audio("music/harryPotter.mp3");
+    const backgroundMusic = new Audio("music/Potter.mp3");
     backgroundMusic.volume = 0.5;
     backgroundMusic.loop = true;
     backgroundMusic.play();
