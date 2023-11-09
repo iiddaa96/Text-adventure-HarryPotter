@@ -105,14 +105,15 @@ h3 {
   text-shadow: 2px 2px 4px goldenrod;
 }
 
+/* CSS för bilderna som ligger i thing (listan) i scenes.js */
 #thing-list {
-  display: flex; /* Använd flexbox för att placera bilderna bredvid varandra */
-  justify-content: space-around; /* Justera avståndet mellan bilderna */
-  margin-top: 20px; /* Justera toppmarginalen för avstånd från text och knappar */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
 .thing-image {
-  max-width: 40px; /* Maximal bredd för varje bild */
-  max-height: 40px; /* Maximal höjd för varje bild */
-  margin-right: 10px; /* Högermarginal mellan bilderna */
+  max-width: 40px;
+  max-height: 40px;
+  margin-right: 10px;
 }

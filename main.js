@@ -42,14 +42,9 @@ function renderScene() {
     const img = document.createElement("img");
     img.src = thing.url;
     img.alt = thing.name;
-    img.className = "thing-image thing-list";
+    img.className = "thing-image thing-list"; // Style från css:en till mina bilder
     thingList.appendChild(img);
   }
-
-  // for loop för things, item listan
-  // for (const thing of scene.things) {
-  //   // Visa bilder på sidan (for loop)
-  // }
 }
 
 // Function till goToNextScen
