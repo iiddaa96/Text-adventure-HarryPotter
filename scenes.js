@@ -113,7 +113,7 @@ const scenes = [
     text: "Tack så mycket för att du räddade mitt liv, jag är evigt tacksam!",
     actions: [
       {
-        text: "Tillbaka",
+        text: "Spela igen",
         activeSceneIndex: 0,
       },
     ],
