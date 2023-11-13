@@ -1,6 +1,10 @@
 window.addEventListener("DOMContentLoaded", main);
 
+let backpackItems = [];
+// let activeSceneIndex = localStorage.getItem("activeSceneIndex") || 0;
+
 function main() {
+  loadBackpackFromLocalStorage();
   renderScene(); //Visar scen 1
 }
 
@@ -57,19 +61,44 @@ function renderScene() {
     // Om bilderna inte ligger i scen 1 så töms diven
     thingList.innerHTML = "";
   }
+}
 
-  function addToBackpack(thing) {
+// Ett försök till localstorage
+function addToBackpack(thing) {
+  backpackItems.push(thing);
+  saveBackpackToLocalStorage();
+  renderBackpack();
+}
+
+function saveBackpackToLocalStorage() {
+  localStorage.setItem("backpackItems", JSON.stringify(backpackItems));
+}
+
+function loadBackpackFromLocalStorage() {
+  const savedBackpack = localStorage.getItem("backpackItems");
+  if (savedBackpack) {
+    backpackItems = JSON.parse(savedBackpack);
+  }
+}
+
+function renderBackpack() {
+  const backpack = document.getElementById("backpack-items");
+  backpack.innerHTML = "";
+
+  // Skapar element "img" som jag refererar till thing som ligger i scenes med url och name
+  backpackItems.forEach((item) => {
     const backpackImg = document.createElement("img");
-    backpackImg.src = thing.url;
-    backpackImg.alt = thing.name;
-    backpackImg.className = "backpack-image";
+    backpackImg.src = item.url;
+    backpackImg.alt = item.name;
+    backpackImg.className = "backpack-image"; // Style från CSS
 
     backpack.appendChild(backpackImg);
-  }
+  });
 }
 
 // Function till goToNextScen
 function goToNextScene(sceneIndex) {
   activeSceneIndex = sceneIndex;
+  localStorage.setItem("activeSceneIndex", activeSceneIndex);
   renderScene(); // Återanvänder från render functionen, bygga den igen
 }
