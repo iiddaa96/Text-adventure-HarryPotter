@@ -1,14 +1,34 @@
 //Array [], med objekt som beskriver scenerna
 
+/**
+ * Array med scener, där varje scen representeras av ett objekt, varje scen har en unik bakgrundsbild samt knappar
+ * @type {Array}
+ */
 let activeSceneIndex = 0;
 const scenes = [
   // Scen- Start - 0
   {
+    /**
+     * Inledning av text för den första scenen
+     * @type {string}
+     */
     text: "Välkommen till Hogwarts äventyr. Vilken tur att du är här, Ron har blivit kidnappad av Lord Voldemort, kan du rädda honom?",
+    /**
+     * Bakgrundsbildens url för första scenen
+     * @type {string}
+     */
     background: 'url("pics/slottet.jpg")',
+    /**
+     * Array med åtgärder som spelaren kan vidta i denna scen, action är knappar
+     * @type {Array}
+     */
     actions: [
       {
         text: "Ja det kan jag",
+        /**
+         * Index för scenen att navigera till vid val av denna åtgärd
+         * @type {number}
+         */
         activeSceneIndex: 1,
       },
       {
@@ -19,9 +39,17 @@ const scenes = [
   },
   // Scen Hagrid - 1
   {
+    /**
+     * Flagga som indikerar om bakgrundsmusik ska startas i denna scen
+     * @type {boolean}
+     */
     startBackgroundMusic: true,
     background: 'url("pics/hagrid.jpg")',
     text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Du behöver plocka med dig en trollstav och en hatt. Tyckte jag såg att det fanns en trollstav här någon stans, hmm..",
+    /**
+     * Array med saker som spelaren kan interagera med i denna scen. Bilder med saker som man kan plocka på sig i denna scen
+     * @type {Array}
+     */
     things: [
       {
         name: "Trollstav",
