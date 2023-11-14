@@ -13,6 +13,7 @@ function renderScene() {
   const actionButtons = document.getElementById("action-buttons");
   const thingList = document.getElementById("thing-list");
   const backpack = document.getElementById("backpack-items");
+  const backpackHeading = document.querySelector("#backpack h3");
 
   const scene = scenes[activeSceneIndex]; // Nu visas scene 1 på webbläsaren, sätts ihop med scenes.js scenes
   // Lite musik genom scenerna, startar från scen 1
@@ -24,6 +25,13 @@ function renderScene() {
   }
   document.body.style.backgroundImage = scene.background;
   text.textContent = scene.text;
+
+  // Om scenen är 0 så ska inte ryggsäcken visas
+  if (activeSceneIndex === 0) {
+    backpackHeading.style.display = "none";
+  } else {
+    backpackHeading.style.display = "block";
+  }
 
   // Loop för actions (knappar)
   // Tömmer diven så nya knapparna kan komma fram
