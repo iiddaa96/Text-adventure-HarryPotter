@@ -68,17 +68,6 @@ function renderScene() {
       removeFromBackpack(event.target);
     }
   });
-
-  function addToBackpack(thing) {
-    const backpackImg = document.createElement("img");
-    backpackImg.src = thing.url;
-    backpackImg.alt = thing.name;
-    backpackImg.className = "backpack-image";
-
-    backpack.appendChild(backpackImg);
-  }
-
-  // Local Storage
   function addToBackpack(thing) {
     const backpackImg = document.createElement("img");
     backpackImg.src = thing.url;
@@ -102,6 +91,7 @@ function renderScene() {
       backpackItems = JSON.parse(savedBackpack);
       renderBackpack(); // Uppdatera visningen av backpack vid laddning
     }
+    return backpackItems;
   }
 
   function renderBackpack() {
@@ -118,12 +108,6 @@ function renderScene() {
     });
   }
 
-  function goToNextScene(sceneIndex) {
-    activeSceneIndex = sceneIndex;
-    renderScene();
-  }
-
-  // Function till goToNextScen
   function goToNextScene(sceneIndex) {
     activeSceneIndex = sceneIndex;
     renderScene(); // Återanvänder från render funktionen, bygga den igen

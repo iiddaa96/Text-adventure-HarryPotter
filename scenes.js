@@ -45,7 +45,7 @@ const scenes = [
      */
     startBackgroundMusic: true,
     background: 'url("pics/hagrid.jpg")',
-    text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Du behöver plocka med dig en trollstav och en hatt. Tyckte jag såg att det fanns en trollstav här någon stans, hmm..",
+    text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Du behöver plocka med dig en trollstav och en hatt. Tyckte jag såg att det fanns lite saker här någon stans, hmm..",
     /**
      * Array med saker som spelaren kan interagera med i denna scen. Bilder med saker som man kan plocka på sig i denna scen
      * @type {Array}
@@ -100,15 +100,19 @@ const scenes = [
   }, // Scen skogen - 3
   {
     background: 'url("pics/skogen.jpg")',
-    text: "Dags att möta Voldemort, kasta iväg en besvärjelse för att rädda Ron innan det är försent!",
+    text: "Dags att möta Lord Voldemort, kasta iväg en besvärjelse för att rädda Ron innan det är försent!",
     actions: [
       {
-        text: "Defendio",
+        text: "Expelliarmus",
         activeSceneIndex: 6,
       },
       {
-        text: "Kastar en sten",
+        text: "Kasta en sten",
         activeSceneIndex: 5,
+      },
+      {
+        text: "Gå tillbaka",
+        activeSceneIndex: 2,
       },
     ],
   }, // Fail mission page - 4
@@ -129,10 +133,6 @@ const scenes = [
       {
         text: "Försök igen",
         activeSceneIndex: 3,
-      },
-      {
-        text: "Gå tillbaka",
-        activeSceneIndex: 2,
       },
     ],
   }, // scen endGame - 6
