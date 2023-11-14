@@ -1,7 +1,11 @@
 window.addEventListener("DOMContentLoaded", main);
 
+// Global variabel
+let backpackItems = [];
+
 function main() {
   renderScene(); //Visar scen 1
+  loadBackpackFromLocalStorage();
 }
 
 function renderScene() {
@@ -30,14 +34,14 @@ function renderScene() {
     // action.text är för att skriva ut texten för de knappar som finns i arrayen
     btn.textContent = action.text;
     btn.className = "btn";
-    // Nedan, så vill hamna på en ny scen med onClick, vi ska inte anropa utan systemet ska därav inga ()
+    // Nedan, så vill hamna på en ny scen med onClick, vi ska inte anropa utan systemet ska, därav inga ()
     btn.onclick = function () {
       goToNextScene(action.activeSceneIndex);
     };
     actionButtons.append(btn);
   }
 
-  // Med hjälp av if sats gör jag så att listan med bilder bara finns med i scen 1, hagrids hus.
+  // Med hjälp av if sats gör jag så att listan med bilder bara finns med i scen 1, Hagrids hus.
   // Med denna for loopen så skapar jag img, där jag kopplar src och alt med thing som ligger i scene
   if (activeSceneIndex === 1) {
     for (const thing of scene.things) {
@@ -58,6 +62,13 @@ function renderScene() {
     thingList.innerHTML = "";
   }
 
+  // Lägger till en funktion med eventlyssnare för att ta bort objekt från ryggsäcken
+  backpack.addEventListener("click", function (event) {
+    if (event.target.tagName === "IMG") {
+      removeFromBackpack(event.target);
+    }
+  });
+
   function addToBackpack(thing) {
     const backpackImg = document.createElement("img");
     backpackImg.src = thing.url;
@@ -67,41 +78,67 @@ function renderScene() {
     backpack.appendChild(backpackImg);
   }
 
-  // Ett försök till localstorage
-  // function addToBackpack(thing) {
-  //   backpackItems.push(thing);
-  //   saveBackpackToLocalStorage();
-  //   renderBackpack();
-  // }
+  // Local Storage
+  function addToBackpack(thing) {
+    const backpackImg = document.createElement("img");
+    backpackImg.src = thing.url;
+    backpackImg.alt = thing.name;
+    backpackImg.className = "backpack-image";
 
-  // function saveBackpackToLocalStorage() {
-  //   localStorage.setItem("backpackItems", JSON.stringify(backpackItems));
-  // }
+    backpack.appendChild(backpackImg);
 
-  // function loadBackpackFromLocalStorage() {
-  //   const savedBackpack = localStorage.getItem("backpackItems");
-  //   if (savedBackpack) {
-  //     backpackItems = JSON.parse(savedBackpack);
-  //   }
-  // }
+    // Lägg till thing i backpackItems och spara till Local Storage
+    backpackItems.push(thing);
+    saveBackpackToLocalStorage();
+  }
 
-  // function renderBackpack() {
-  //   const backpack = document.getElementById("backpack-items");
-  //   backpack.innerHTML = "";
+  function saveBackpackToLocalStorage() {
+    localStorage.setItem("backpackItems", JSON.stringify(backpackItems));
+  }
 
-  //   // Skapar element "img" som jag refererar till thing som ligger i scenes med url och name
-  //   backpackItems.forEach((item) => {
-  //     const backpackImg = document.createElement("img");
-  //     backpackImg.src = item.url;
-  //     backpackImg.alt = item.name;
-  //     backpackImg.className = "backpack-image"; // Style från CSS
+  function loadBackpackFromLocalStorage() {
+    const savedBackpack = localStorage.getItem("backpackItems");
+    if (savedBackpack) {
+      backpackItems = JSON.parse(savedBackpack);
+      renderBackpack(); // Uppdatera visningen av backpack vid laddning
+    }
+  }
 
-  //     backpack.appendChild(backpackImg);
-  //   });
-}
+  function renderBackpack() {
+    const backpack = document.getElementById("backpack-items");
+    backpack.innerHTML = "";
 
-// Function till goToNextScen
-function goToNextScene(sceneIndex) {
-  activeSceneIndex = sceneIndex;
-  renderScene(); // Återanvänder från render funktionen, bygga den igen
+    backpackItems.forEach((item) => {
+      const backpackImg = document.createElement("img");
+      backpackImg.src = item.url;
+      backpackImg.alt = item.name;
+      backpackImg.className = "backpack-image";
+
+      backpack.appendChild(backpackImg);
+    });
+  }
+
+  function goToNextScene(sceneIndex) {
+    activeSceneIndex = sceneIndex;
+    renderScene();
+  }
+
+  // Function till goToNextScen
+  function goToNextScene(sceneIndex) {
+    activeSceneIndex = sceneIndex;
+    renderScene(); // Återanvänder från render funktionen, bygga den igen
+    loadBackpackFromLocalStorage();
+  }
+
+  function removeFromBackpack(clickedImage) {
+    // Hitta indexen för den klickade bilden i ryggsäcken
+    const index = Array.from(backpack.children).indexOf(clickedImage);
+
+    // Ta bort bilden från DOM:en
+    backpack.removeChild(clickedImage);
+
+    // Ta bort objektet från backpackItems och spara sedan till Local Storage
+    const removedItem = backpackItems.splice(index, 1)[0];
+    saveBackpackToLocalStorage();
+  }
 }

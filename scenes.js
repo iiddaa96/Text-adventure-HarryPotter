@@ -1,7 +1,7 @@
 //Array [], med objekt som beskriver scenerna
 
 /**
- * Array med scener, där varje scen representeras av ett objekt, varje scen har en unik bakgrundsbild samt knappar
+ * Array med scener, där varje scen representeras av ett objekt, varje scen har en unik bakgrundsbild samt knappar och beskrivning
  * @type {Array}
  */
 let activeSceneIndex = 0;
