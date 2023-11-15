@@ -1,6 +1,6 @@
 /***
  * Array med objekt som beskriver scenerna. Beskrivning om vad som finns i scenerna
- * @typedef {{ text: string, background: string, actions: actions[], startBackgroundMusic: boolean, activeSceneIndex: number [] }} Scene
+ * @typedef {{ text: string, background: string, actions: actions[], startBackgroundMusic: boolean, activeSceneIndex: number, things: things[] [] }} Scene
  */
 
 /***

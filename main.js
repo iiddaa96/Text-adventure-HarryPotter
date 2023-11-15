@@ -1,17 +1,26 @@
-// Hämtar från DOM:en innan den kör js koden
-//används för att vänta på att hela HTML-dokumentet ska laddas innan den kör JavaScript-koden. När HTML-dokumentet är klart att användas,
-//kommer händelsen "DOMContentLoaded" att triggas, och då körs funktionen main.
+/**
+ * Händelsehanterare för "DOMContentLoaded" väntar på att hela HTML-dokumentet ska laddas innan JavaScript-koden körs.
+ * När HTML-dokumentet är klart att användas, triggas händelsen "DOMContentLoaded", och funktionen `main` körs.
+ * @event window#DOMContentLoaded
+ */
 window.addEventListener("DOMContentLoaded", main);
 
-// Global variabel
+/**
+ * En global variabel som innehåller en lista över objekt i backpack.
+ */
 let backpackItems = [];
 
-// Huvudfunktionen som körs vid start av applikationen
+/**
+ * Huvudfunktionen som körs vid start av applikationen.
+ */
 function main() {
   renderScene(); //Visar scen 1
   loadBackpackFromLocalStorage(); // Ladda information om ryggsäcken från webbläsarens lokal lagring
 }
 
+/**
+ * Renderar den aktuella scenen baserat på den globala variabeln activeSceneIndex.
+ */
 function renderScene() {
   const text = document.getElementById("text");
   const actionButtons = document.getElementById("action-buttons");
@@ -32,15 +41,19 @@ function renderScene() {
   // Textinnehållet sätts för HTML-element med variabeln 'text'
   text.textContent = scene.text;
 
-  // Om scenen är 0 så ska inte ryggsäcken visas
+  /**
+   * Om scenen är 0 så ska inte ryggsäcken visas
+   */
   if (activeSceneIndex === 0) {
     backpack.style.display = "none";
   } else {
     backpack.style.display = null;
   }
 
-  // Loop för actions (knappar)
-  // Tömmer diven så nya knapparna kan komma fram
+  /**
+   * Loop för actions (knapparna)
+   * Tömmer diven "action-buttons" så nya knapparna kan komma fram till scenes
+   */
   actionButtons.innerHTML = "";
   // FOR loop, "för en knapp av scen knapparna" skapar knapp button.
   for (const action of scene.actions) {
@@ -55,8 +68,10 @@ function renderScene() {
     actionButtons.append(btn);
   }
 
-  // Med hjälp av if sats gör jag så att listan med bilder bara finns med i scen 1, Hagrids hus.
-  // Med denna for loopen så skapar jag img, där jag kopplar src och alt med thing som ligger i scene
+  /**
+   * Med hjälp av if sats gör jag så att listan med bilder bara finns med i scen 1, Hagrids hus.
+   * Med denna for loopen så skapar jag img, där jag kopplar src och alt med thing som ligger i scene
+   */
   if (activeSceneIndex === 1) {
     for (const thing of scene.things) {
       const img = document.createElement("img");
@@ -76,7 +91,10 @@ function renderScene() {
     thingList.innerHTML = "";
   }
 }
-
+/**
+ * Lägger till en bild som finns i (thing) i ryggsäcken och uppdaterar sedan backpack.
+ * @param {{ name: string, url: string }} thing - Objekt som representerar en bild med en namn- och url-egenskap.
+ */
 function addToBackpack(thing) {
   // Lägg till thing i backpackItems och spara till Local Storage
   backpackItems.push(thing);
@@ -84,10 +102,17 @@ function addToBackpack(thing) {
   renderBackpack();
 }
 
+/**
+ * Sparar ryggsäckens innehåll till webbläsarens lokal lagring.
+ */
 function saveBackpackToLocalStorage() {
   localStorage.setItem("backpackItems", JSON.stringify(backpackItems));
 }
 
+/**
+ * Laddar ryggsäckens innehåll från webbläsarens lokal lagring och uppdaterar visningen.
+ * @returns {Array<{ name: string, url: string }>} - Ryggsäckens innehåll.
+ */
 function loadBackpackFromLocalStorage() {
   const savedBackpack = localStorage.getItem("backpackItems");
   if (savedBackpack) {
@@ -97,6 +122,9 @@ function loadBackpackFromLocalStorage() {
   return backpackItems;
 }
 
+/**
+ * Renderar ryggsäckens innehåll.
+ */
 function renderBackpack() {
   const backpack = document.getElementById("backpack-items");
   backpack.innerHTML = "";
