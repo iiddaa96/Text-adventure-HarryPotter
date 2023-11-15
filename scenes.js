@@ -84,7 +84,7 @@ const scenes = [
   //Scen - Karta - 2
   {
     background: 'url("pics/map.jpg")',
-    text: "Du har hittat kartan! Här kan du hitta vägen till Ron. Ser ut som att du kommer att få gå till den förbjudna skogen. Det är där Ron hålls fången. Bara du kan rädda honom nu!",
+    text: `Du har hittat kartan! Här kan du hitta vägen till Ron. Ser ut som att du kommer att få gå till den förbjudna skogen. Det är där Ron hålls fången. Bara du kan rädda honom nu!`,
     actions: [
       {
         text: "Gå till skogen",

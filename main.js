@@ -1,26 +1,19 @@
-/**
+/*
  * Händelsehanterare för "DOMContentLoaded" väntar på att hela HTML-dokumentet ska laddas innan JavaScript-koden körs.
  * När HTML-dokumentet är klart att användas, triggas händelsen "DOMContentLoaded", och funktionen `main` körs.
- * @event window#DOMContentLoaded
  */
 window.addEventListener("DOMContentLoaded", main);
 
-/**
- * En global variabel som innehåller en lista över objekt i backpack.
- */
+//En global variabel som innehåller en lista över objekt i backpack.
 let backpackItems = [];
 
-/**
- * Huvudfunktionen som körs vid start av applikationen.
- */
+//Huvudfunktionen som körs vid start av applikationen.
 function main() {
   renderScene(); //Visar scen 1
   loadBackpackFromLocalStorage(); // Ladda information om ryggsäcken från webbläsarens lokal lagring
 }
 
-/**
- * Renderar den aktuella scenen baserat på den globala variabeln activeSceneIndex.
- */
+//Renderar den aktuella scenen baserat på den globala variabeln activeSceneIndex.
 function renderScene() {
   const text = document.getElementById("text");
   const actionButtons = document.getElementById("action-buttons");
@@ -41,16 +34,14 @@ function renderScene() {
   // Textinnehållet sätts för HTML-element med variabeln 'text'
   text.textContent = scene.text;
 
-  /**
-   * Om scenen är 0 och 4 så ska inte ryggsäcken visas på sidan
-   */
+  //Om scenen är 0 och 4 så ska inte ryggsäcken visas på sidan
   if (activeSceneIndex === 0 || activeSceneIndex === 4) {
     backpack.style.display = "none";
   } else {
     backpack.style.display = null;
   }
 
-  /**
+  /*
    * Loop för actions (knapparna)
    * Tömmer diven "action-buttons" så nya knapparna kan komma fram till scenes
    */
@@ -68,7 +59,7 @@ function renderScene() {
     actionButtons.append(btn);
   }
 
-  /**
+  /*
    * Med hjälp av if sats gör jag så att listan med bilder bara finns med i scen 1, Hagrids hus.
    * Med denna for loopen så skapar jag img, där jag kopplar src och alt med thing som ligger i scene
    */
@@ -102,9 +93,7 @@ function addToBackpack(thing) {
   renderBackpack();
 }
 
-/**
- * Sparar ryggsäckens innehåll till webbläsarens lokal lagring.
- */
+//Sparar ryggsäckens innehåll till webbläsarens lokal lagring.
 function saveBackpackToLocalStorage() {
   localStorage.setItem("backpackItems", JSON.stringify(backpackItems));
 }
@@ -122,9 +111,7 @@ function loadBackpackFromLocalStorage() {
   return backpackItems;
 }
 
-/**
- * Renderar ryggsäckens innehåll.
- */
+//Renderar ryggsäckens innehåll.
 function renderBackpack() {
   const backpack = document.getElementById("backpack-items");
   backpack.innerHTML = "";
@@ -144,12 +131,20 @@ function renderBackpack() {
   });
 }
 
+/**
+ * Navigerar användaren till nästa scen baserat på det angivna scenindexet.
+ * @param {number} sceneIndex - Indexet för scenen att navigera till.
+ */
 function goToNextScene(sceneIndex) {
   activeSceneIndex = sceneIndex;
   renderScene(); // Återanvänder från render funktionen, bygga den igen
   loadBackpackFromLocalStorage();
 }
 
+/**
+ * Tar bort det angivna objektet(bilden) från ryggsäcken.
+ * @param {any} backpackItem - Objektet som ska tas bort från ryggsäcken.
+ */
 function removeFromBackpack(backpackItem) {
   console.log("remove");
   // Hitta indexen för den klickade bilden i ryggsäcken
