@@ -91,7 +91,7 @@ const scenes = [
         activeSceneIndex: 3,
       },
       {
-        text: "Gå tillbaka till Hagrid",
+        text: "Gå tillbaka",
         activeSceneIndex: 1,
       },
     ],
