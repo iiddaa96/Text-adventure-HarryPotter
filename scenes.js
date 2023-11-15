@@ -54,16 +54,16 @@ const scenes = [
         url: "pics/trollstav.jpg",
       },
       {
-        name: "Hatt",
-        url: "pics/hatt.jpg",
-      },
-      {
         name: "Pumpa",
         url: "pics/pumpa.jpg",
       },
       {
         name: "Sten",
         url: "pics/sten.jpg",
+      },
+      {
+        name: "Hatt",
+        url: "pics/hatt.jpg",
       },
       {
         name: "Fjäder",
