@@ -76,6 +76,7 @@ function renderScene() {
       removeFromBackpack(event.target);
     }
   });
+
   function addToBackpack(thing) {
     const backpackImg = document.createElement("img");
     backpackImg.src = thing.url;
@@ -123,14 +124,17 @@ function renderScene() {
   }
 
   function removeFromBackpack(clickedImage) {
-    // Hitta indexen för den klickade bilden i ryggsäcken
-    const index = Array.from(backpack.children).indexOf(clickedImage);
+    // Kontrollerar om clickedImage är ett child till backpack
+    if (backpack.contains(clickedImage)) {
+      // Hitta indexen för den klickade bilden i ryggsäcken
+      const index = Array.from(backpack.children).indexOf(clickedImage);
 
-    // Ta bort bilden från DOM:en
-    backpack.removeChild(clickedImage);
+      // Ta bort bilden från DOM:en
+      backpack.removeChild(clickedImage);
 
-    // Ta bort objektet från backpackItems och spara sedan till Local Storage
-    const removedItem = backpackItems.splice(index, 1)[0];
-    saveBackpackToLocalStorage();
+      // Ta bort objektet från backpackItems och spara sedan till Local Storage
+      const removedItem = backpackItems.splice(index, 1)[0];
+      saveBackpackToLocalStorage();
+    }
   }
 }
