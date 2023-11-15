@@ -97,10 +97,6 @@ h3 {
   text-shadow: 3px 3px 5px black;
 }
 
-#backpack h3 {
-  display: none;
-}
-
 /* CSS för bilderna som ligger i thing (listan) i scenes.js */
 #thing-list {
   display: flex;

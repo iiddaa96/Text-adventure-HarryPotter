@@ -1,34 +1,38 @@
-//Array [], med objekt som beskriver scenerna
+/***
+ * a scene object
+ * @typedef {{ text: string, background: string, actions: actions[], startBackgroundMusic: boolean, activeSceneIndex: number [] }} Scene
+ */
+
+/***
+ * a scene object
+ * @typedef {{ text: string, activeSceneIndex: number[] }} actions
+ */
+
+/***
+ * a scene object
+ * @typedef {{ name: string, url: string [] }} things
+ */
 
 /**
  * Array med scener, där varje scen representeras av ett objekt, varje scen har en unik bakgrundsbild samt knappar och beskrivning
- * @type {Array}
  */
 let activeSceneIndex = 0;
+
+/**
+ * @type {Scene[]}
+ */
 const scenes = [
+  //Array [], med objekt som beskriver scenerna
   // Scen- Start - 0
   {
-    /**
-     * Inledning av text för den första scenen
-     * @type {string}
-     */
     text: "Välkommen till Hogwarts äventyr. Vilken tur att du är här, Ron har blivit kidnappad av Lord Voldemort, kan du rädda honom?",
-    /**
-     * Bakgrundsbildens url för första scenen
-     * @type {string}
-     */
     background: 'url("pics/slottet.jpg")',
     /**
-     * Array med åtgärder som spelaren kan vidta i denna scen, action är knappar
-     * @type {Array}
+     * @type {actions[]}
      */
     actions: [
       {
         text: "Ja det kan jag",
-        /**
-         * Index för scenen att navigera till vid val av denna åtgärd
-         * @type {number}
-         */
         activeSceneIndex: 1,
       },
       {
@@ -39,16 +43,11 @@ const scenes = [
   },
   // Scen Hagrid - 1
   {
-    /**
-     * Flagga som indikerar om bakgrundsmusik ska startas i denna scen
-     * @type {boolean}
-     */
     startBackgroundMusic: true,
     background: 'url("pics/hagrid.jpg")',
     text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Du behöver plocka med dig en trollstav och en hatt. Tyckte jag såg att det fanns lite saker här någon stans, hmm..",
     /**
-     * Array med saker som spelaren kan interagera med i denna scen. Bilder med saker som man kan plocka på sig i denna scen
-     * @type {Array}
+     * @type {things[]}
      */
     things: [
       {
