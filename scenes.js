@@ -1,20 +1,20 @@
 /***
- * a scene object
+ * Array med objekt som beskriver scenerna. Beskrivning om vad som finns i scenerna
  * @typedef {{ text: string, background: string, actions: actions[], startBackgroundMusic: boolean, activeSceneIndex: number [] }} Scene
  */
 
 /***
- * a scene object
+ * Knappar till scenerna, text på respektive knapp samt till vilken scen man kommer till
  * @typedef {{ text: string, activeSceneIndex: number[] }} actions
  */
 
 /***
- * a scene object
+ * Array med lista av bilder som har name och url kopplat till varje bild
  * @typedef {{ name: string, url: string [] }} things
  */
 
 /**
- * Array med scener, där varje scen representeras av ett objekt, varje scen har en unik bakgrundsbild samt knappar och beskrivning
+ * Index för den aktiva scenen.
  */
 let activeSceneIndex = 0;
 
@@ -22,7 +22,6 @@ let activeSceneIndex = 0;
  * @type {Scene[]}
  */
 const scenes = [
-  //Array [], med objekt som beskriver scenerna
   // Scen- Start - 0
   {
     text: "Välkommen till Hogwarts äventyr. Vilken tur att du är här, Ron har blivit kidnappad av Lord Voldemort, kan du rädda honom?",
