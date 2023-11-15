@@ -1,11 +1,15 @@
+// Hämtar från DOM:en innan den kör js koden
+//används för att vänta på att hela HTML-dokumentet ska laddas innan den kör JavaScript-koden. När HTML-dokumentet är klart att användas,
+//kommer händelsen "DOMContentLoaded" att triggas, och då körs funktionen main.
 window.addEventListener("DOMContentLoaded", main);
 
 // Global variabel
 let backpackItems = [];
 
+// Huvudfunktionen som körs vid start av applikationen
 function main() {
   renderScene(); //Visar scen 1
-  loadBackpackFromLocalStorage();
+  loadBackpackFromLocalStorage(); // Ladda information om ryggsäcken från webbläsarens lokal lagring
 }
 
 function renderScene() {
@@ -24,7 +28,7 @@ function renderScene() {
     backgroundMusic.play();
   }
 
-  // Tar ut style för bakgrundsbilderna i scenes
+  // Tar ut style för bakgrundsbilderna i scene
   document.body.style.backgroundImage = scene.background;
   // Textinnehållet sätts för HTML-element med variabeln 'text'
   text.textContent = scene.text;
@@ -39,7 +43,7 @@ function renderScene() {
   // Loop för actions (knappar)
   // Tömmer diven så nya knapparna kan komma fram
   actionButtons.innerHTML = "";
-  // for loop, "för en knapp av scen knapparna" skapar knapp button.
+  // FOR loop, "för en knapp av scen knapparna" skapar knapp button.
   for (const action of scene.actions) {
     const btn = document.createElement("button");
     // action.text är för att skriva ut texten för de knappar som finns i arrayen
