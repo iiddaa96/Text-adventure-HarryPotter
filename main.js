@@ -23,7 +23,10 @@ function renderScene() {
     backgroundMusic.loop = true;
     backgroundMusic.play();
   }
+
+  // Tar ut style för bakgrundsbilderna i scenes
   document.body.style.backgroundImage = scene.background;
+  // Textinnehållet sätts för HTML-element med variabeln 'text'
   text.textContent = scene.text;
 
   // Om scenen är 0 så ska inte ryggsäcken visas
