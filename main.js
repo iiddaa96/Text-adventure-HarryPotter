@@ -42,9 +42,9 @@ function renderScene() {
   text.textContent = scene.text;
 
   /**
-   * Om scenen är 0 så ska inte ryggsäcken visas
+   * Om scenen är 0 och 4 så ska inte ryggsäcken visas på sidan
    */
-  if (activeSceneIndex === 0) {
+  if (activeSceneIndex === 0 || activeSceneIndex === 4) {
     backpack.style.display = "none";
   } else {
     backpack.style.display = null;
