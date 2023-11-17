@@ -7,6 +7,9 @@ window.addEventListener("DOMContentLoaded", main);
 //En global variabel som innehåller en lista över objekt i backpack.
 let backpackItems = [];
 
+//En global variabel, Representerar bakgrundsmusiken för spelet.
+let backgroundMusic;
+
 //Huvudfunktionen som körs vid start av applikationen.
 function main() {
   renderScene(); //Visar scen 1
@@ -20,13 +23,23 @@ function renderScene() {
   const thingList = document.getElementById("thing-list");
   const backpack = document.getElementById("backpack");
 
-  const scene = scenes[activeSceneIndex]; // Nu visas scene 1 på webbläsaren, sätts ihop med scenes.js scenes
-  // Lite musik genom scenerna, startar från scen 1
-  if (scene.startBackgroundMusic) {
-    const backgroundMusic = new Audio("music/Potter.mp3");
-    backgroundMusic.volume = 0.5;
-    backgroundMusic.loop = true;
-    backgroundMusic.play();
+  const scene = scenes[activeSceneIndex];
+
+  // Lite musik genom scenerna, startar från scen 1 och fortsätter till slutscenen
+  if (activeSceneIndex >= 1) {
+    if (!backgroundMusic) {
+      backgroundMusic = new Audio("music/Potter.mp3");
+      backgroundMusic.volume = 0.5;
+      backgroundMusic.loop = true;
+
+      // Lägger till en lyssnare för att återställa musiken när den är slut
+      backgroundMusic.addEventListener("ended", function () {
+        this.currentTime = 0;
+        this.play();
+      });
+
+      backgroundMusic.play();
+    }
   }
 
   // Tar ut style för bakgrundsbilderna i scene
