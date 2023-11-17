@@ -44,7 +44,7 @@ const scenes = [
   {
     startBackgroundMusic: true,
     background: 'url("pics/hagrid.jpg")',
-    text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Du behöver plocka med dig en trollstav och en hatt. Tyckte jag såg att det fanns lite saker här någon stans, hmm.. /n Tips du kan ångra vald objekt genom att klicka på bilden i ryggsäcken",
+    text: "Det är jag som är Rubeus Hagrid! Jag är en halvjätte och arbetar som skogvaktare här på Hogwarts. Vilken tur att du har kommit, Ron är verkligen i fara! Du behöver plocka med dig en trollstav och en hatt. Tyckte jag såg att det fanns lite saker här någon stans, hmm... Tips du kan ångra vald objekt genom att klicka på bilden i ryggsäcken.",
     /**
      * @type {things[]}
      */
