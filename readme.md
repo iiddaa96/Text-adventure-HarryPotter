@@ -11,4 +11,4 @@ Tanken är att man kort och enkelt ska rädda Ron från Voldemort, han har blivi
 
 Använder mig mycket av javascript. Arrayer, skapar flera knappar och lista med bilder som ska användas vid speletsgång. Ryggsäck där du som spelar ska ta med dig två saker för att klara "äventyret".
 
-[Länk till min gitHub fil HP sida](https://iiddaa96.github.io/Text-adventure-HarryPotter/)
+[Github pages HarryPotter](https://iiddaa96.github.io/Text-adventure-HarryPotter/)
