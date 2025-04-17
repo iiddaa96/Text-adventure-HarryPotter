@@ -1,8 +1,6 @@
-# School homework, Text-based game
+## School homework, Text-based game - Hogwarts Adventures by Ida Casperson
 
-## Hogwarts Adventures by Ida Casperson
-
-**Description**
+## **Description**
 In this submission, I have created an interactive experience where the user can make changes to a world. Examples of such changes are: going to another room, picking up objects, talking to entities, etc. The task is free and you choose for yourself what your world should look like and how the user interacts in the world. Let your creativity flow!
 
 My text adventure is called Hogwarts Adventure, where you navigate through buttons that I have created in js.
