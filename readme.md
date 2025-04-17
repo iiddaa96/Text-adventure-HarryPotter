@@ -1,14 +1,13 @@
-# Inlämning, En interaktiv upplevelse i din värld.
+# School homework, Text-based game
 
-## Hogwarts Äventyr av Ida Casperson
+## Hogwarts Adventures by Ida Casperson
 
-**Uppgift beskrivning**
-I den här inlämningen skall jag skapa en interaktiv upplevelse där användaren kan göra förändringar i en värld. Exempel på sådana förändringar är: gå till ett annat rum, plocka upp föremål, prata med entiteter etc. Uppgiften är fri och du väljer själv hur din värld ska se ut och hur användaren interagerar i världen. Låt kreativiteten flöda!
+**Description**
+In this submission, I have created an interactive experience where the user can make changes to a world. Examples of such changes are: going to another room, picking up objects, talking to entities, etc. The task is free and you choose for yourself what your world should look like and how the user interacts in the world. Let your creativity flow!
 
-**Tillväga gångs sätt**
-Mitt text adventure heter hogwarts äventyr, där du navigerar dig genom knappar som jag har skapat i js.
-Tanken är att man kort och enkelt ska rädda Ron från Voldemort, han har blivit kidnappad och du är räddaren i nöden. För att klara detta måste du passera olika rum för att komma dit genom knappar. På vägen behöver du plocka på dig två redskap för att sedan kunna rädda Ron.
+My text adventure is called Hogwarts Adventure, where you navigate through buttons that I have created in js.
+The idea is that you should save Ron from Voldemort in a short and simple way, he has been kidnapped and you are the savior in need. To do this you have to pass through different rooms to get there through buttons. On the way you need to pick up two tools to then be able to save Ron.
 
-Använder mig mycket av javascript. Arrayer, skapar flera knappar och lista med bilder som ska användas vid speletsgång. Ryggsäck där du som spelar ska ta med dig två saker för att klara "äventyret".
+I use a lot of javascript. Arrays, create several buttons and a list of images that will be used during the game. Backpack where you as the player should bring two things with you to complete the "adventure".
 
-[Github pages HarryPotter](https://iiddaa96.github.io/Text-adventure-HarryPotter/)
+[HarryPotter](https://iiddaa96.github.io/Text-adventure-HarryPotter/)
